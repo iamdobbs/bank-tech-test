@@ -15,5 +15,12 @@ describe Transaction do
       expect(transaction.transaction_type).to eq(transaction_type)
       expect(transaction.balance).to eq(balance)
     end
+
+    it 'does not allow modification of attributes' do
+      expect { transaction.date = "02/01/2023" }.to raise_error(NoMethodError)
+      expect { transaction.amount = 500 }.to raise_error(NoMethodError)
+      expect { transaction.transaction_type = "debit" }.to raise_error(NoMethodError)
+      expect { transaction.balance = 1000 }.to raise_error(NoMethodError)
+    end  
   end
 end  
