@@ -25,7 +25,8 @@ describe BankAccount do
       expect(@account.balance).to eq(500)
     end  
     it 'raises error if withdrawal amount is greater than current balance' do
-      expect{ @account.withdraw(500) }.to raise_error("Funds not available")
+      expect{ @account.withdraw(500) }.to raise_error("Insufficient balance")
     end  
   end
+
 end
