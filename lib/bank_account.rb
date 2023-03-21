@@ -7,11 +7,11 @@ class BankAccount
     @transactions = []
   end  
 
-  def deposit(amount)
+  def deposit(amount, date)
     @balance += amount
   end  
 
-  def withdraw(amount)
+  def withdraw(amount, date)
     raise "Insufficient balance" if amount > @balance
     @balance -= amount
   end
