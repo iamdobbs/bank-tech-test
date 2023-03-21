@@ -17,6 +17,7 @@ class BankAccount
   def withdraw(amount, date)
     raise "Insufficient balance" if amount > @balance
     @balance -= amount
+    @transactions << Transaction.new(date, amount, :debit, balance)
   end
 
 end  

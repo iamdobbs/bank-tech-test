@@ -14,5 +14,15 @@ describe 'BankAccount integration' do
       expect(transaction.transaction_type).to eq(:credit)
       expect(transaction.balance).to eq(1000)
     end  
+
+    it 'records a withdrawal transaction' do
+      @account.deposit(1000, '10/02/2023')
+      @account.withdraw(500, '11/02/2023')
+      transaction = @account.transactions.last
+      expect(transaction.amount).to eq(500)
+      expect(transaction.date).to eq('11/02/2023')
+      expect(transaction.transaction_type).to eq(:debit)
+      expect(transaction.balance).to eq(500)
+    end  
   end
 end
