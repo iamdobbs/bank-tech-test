@@ -22,3 +22,22 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+
+### User Stories
+```
+As a user
+I would like to have a bank account
+So I can manage my money
+
+As a user
+I would like to deposit money into my account
+So I can store money in my bank account
+
+As a user
+I would like to withdraw money from my account
+So I can access my funds
+
+As a user
+I would like to print a statement
+So I can see a summary of my transactions and balances
+```
