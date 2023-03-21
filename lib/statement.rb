@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Statement class allows user to generate printed summary of transaction history
 class Statement
   HEADER = 'date || credit || debit || balance'
 
@@ -19,6 +20,6 @@ class Statement
   end
 
   def format_output(number)
-    '%.2f' % number
+    format('%.2f', number)
   end
 end

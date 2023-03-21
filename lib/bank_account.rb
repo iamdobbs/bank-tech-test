@@ -3,6 +3,7 @@
 require_relative './transaction'
 require_relative './statement'
 
+# BankAccount class handles the transactional methods for managing a user account
 class BankAccount
   attr_reader :balance, :transactions
 
