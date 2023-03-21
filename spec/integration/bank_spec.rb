@@ -56,4 +56,10 @@ describe 'BankAccount integration' do
       ).to_stdout
     end
   end
+
+  context 'error handling' do
+    it 'raises error when withdrawal amount > current balance' do
+      expect { @account.withdraw(500, '10/02/2023') }.to raise_error('Insufficient balance')
+    end  
+  end
 end
