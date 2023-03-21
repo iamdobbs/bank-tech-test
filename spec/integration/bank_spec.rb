@@ -24,5 +24,15 @@ describe 'BankAccount integration' do
       expect(transaction.transaction_type).to eq(:debit)
       expect(transaction.balance).to eq(500)
     end  
+
+    it 'records multiple transactions in the correct order' do
+      @account.deposit(1000, '10/02/2023')
+      @account.withdraw(500, '11/02/2023')
+      @account.deposit(2000, '12/02/2023')
+      expect(@account.transactions.length).to eq(3)
+      expect(@account.transactions[0].amount).to eq(1000)
+      expect(@account.transactions[1].amount).to eq(500)
+      expect(@account.transactions[2].amount).to eq(2000)
+    end
   end
 end
