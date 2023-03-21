@@ -41,3 +41,11 @@ As a user
 I would like to print a statement
 So I can see a summary of my transactions and balances
 ```
+
+### Approach
+
+I will use three classes to manage the functionality of this application:
+
+• BankAccount - to handle the balance, withdrawals and deposits
+• Transaction - to manage the individual elements of each transaction instance
+• Statement - to print the statement and format the relevant time and monetary elements
