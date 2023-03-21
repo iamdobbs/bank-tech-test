@@ -1,3 +1,5 @@
+require_relative './transaction'
+
 class BankAccount
 
   attr_reader :balance, :transactions
@@ -9,6 +11,7 @@ class BankAccount
 
   def deposit(amount, date)
     @balance += amount
+    @transactions << Transaction.new(date, amount, :credit, balance)
   end  
 
   def withdraw(amount, date)
