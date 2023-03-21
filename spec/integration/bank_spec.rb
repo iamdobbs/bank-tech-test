@@ -44,14 +44,14 @@ describe 'BankAccount integration' do
       @account.withdraw(200, '02/01/2023')
       expect(@account.balance).to eq(800)
     end
-  end  
+  end
 
   context 'integration between BankAccount and Statement classes' do
     it 'prints a statement with the correct transactions' do
       @account.deposit(1000, '10/01/2023')
       @account.deposit(2000, '13/01/2023')
       @account.withdraw(500, '14/01/2023')
-      expect{ @account.print_statement }.to output(
+      expect { @account.print_statement }.to output(
         "date || credit || debit || balance\n14/01/2023 || || 500.00 || 2500.00\n13/01/2023 || 2000.00 || || 3000.00\n10/01/2023 || 1000.00 || || 1000.00\n"
       ).to_stdout
     end
@@ -60,6 +60,6 @@ describe 'BankAccount integration' do
   context 'error handling' do
     it 'raises error when withdrawal amount > current balance' do
       expect { @account.withdraw(500, '10/02/2023') }.to raise_error('Insufficient balance')
-    end  
+    end
   end
 end

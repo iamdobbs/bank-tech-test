@@ -25,5 +25,5 @@ class BankAccount
 
   def print_statement
     Statement.new(@transactions).print_statement
-  end  
+  end
 end

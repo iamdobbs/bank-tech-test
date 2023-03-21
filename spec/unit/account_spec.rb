@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/bank_account'
 
 describe BankAccount do
@@ -13,7 +15,7 @@ describe BankAccount do
       expect(@account.transactions).to be_empty
     end
   end
-  
+
   context 'updating balance when transaction functions called' do
     it 'increases balance when deposit is made' do
       @account.deposit(1000, '10/02/2023')
@@ -23,10 +25,9 @@ describe BankAccount do
       @account.deposit(1000, '10/02/2023')
       @account.withdraw(500, '10/02/2023')
       expect(@account.balance).to eq(500)
-    end  
+    end
     it 'raises error if withdrawal amount is greater than current balance' do
-      expect{ @account.withdraw(500, '10/02/2023') }.to raise_error("Insufficient balance")
-    end  
+      expect { @account.withdraw(500, '10/02/2023') }.to raise_error('Insufficient balance')
+    end
   end
-
 end

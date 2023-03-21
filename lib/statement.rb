@@ -7,7 +7,7 @@ class Statement
     @transactions = transactions
   end
 
-  def print
+  def print_statement
     puts HEADER
     @transactions.reverse_each do |t|
       if t.transaction_type == :credit
