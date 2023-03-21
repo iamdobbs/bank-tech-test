@@ -6,5 +6,9 @@ describe BankAccount do
       account = BankAccount.new
       expect(account.balance).to eq(0)
     end
+    it 'initializes with an empty transactions array' do
+      account = BankAccount.new
+      expect(account.transactions).to be_empty
+    end
   end
 end
