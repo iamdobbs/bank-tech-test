@@ -38,6 +38,14 @@ describe 'BankAccount integration' do
     end
   end
 
+  context 'updates the balance correctly' do
+    it 'updates the balance when deposit and withdrawal made' do
+      @account.deposit(1000, '01/01/2023')
+      @account.withdraw(200, '02/01/2023')
+      expect(@account.balance).to eq(800)
+    end
+  end  
+
   context 'integration between BankAccount and Statement classes' do
     it 'prints a statement with the correct transactions' do
       @account.deposit(1000, '10/01/2023')
