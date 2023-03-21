@@ -14,4 +14,10 @@ describe BankAccount do
     end
   end
   
+  context 'updating balance when transaction functions called' do
+    it 'increases balance when deposit is made' do
+      @account.deposit(1000)
+      expect(@account.balance).to eq(1000)
+    end
+  end
 end
