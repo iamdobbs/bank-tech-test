@@ -52,10 +52,10 @@ and I was happy with the solution, I did some additional refactoring for code qu
 ### Code Structure
 The code is organised into three classes to manage the functionality of this application:
 
-• BankAccount - represents a bank account and allows for deposits, withdrawals and printing of statements.
-• Transaction - represents a single transaction and stores information such as the date, amount, type of transaction
+- BankAccount - represents a bank account and allows for deposits, withdrawals and printing of statements.
+- Transaction - represents a single transaction and stores information such as the date, amount, type of transaction
   and updated balance.
-• Statement - represents a statement of transactions and is responsible for formatting and printing the statement.
+- Statement - represents a statement of transactions and is responsible for formatting and printing the statement.
 
 ### Screenshot
 
