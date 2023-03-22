@@ -1,3 +1,10 @@
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*.rb"
+Metrics/MethodLength:
+  Max: 7   
+Metrics/ClassLength:
+  Max: 50
+AllCops:
+  Exclude:
+    - "spec/spec_helper.rb"
