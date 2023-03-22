@@ -1,21 +1,40 @@
-# Bank tech test
-## Specification
+# Bank Tech Test
 
-### Requirements
+This is a command-line application that allows a user to utilise a bank account and make deposits, 
+withdrawals and print a statement of their transactions.
+## #Specification
 
-* You should be able to interact with your code via a REPL like IRB or Node.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+Please click [here](https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md) to view
+the original specification for this project, provided by @makersacademy.
 
-### Acceptance criteria
+### Installation
 
-**Given** a client makes a deposit of 1000 on 10-01-2023  
-**And** a deposit of 2000 on 13-01-2023  
-**And** a withdrawal of 500 on 14-01-2023  
-**When** she prints her bank statement  
-**Then** she would see
+1. Clone this repository to your local machine.
+2. Install the required dependencies using `bundle install`.
 
+### Testing
+
+This project uses Rspec for testing and SimpleCov to confirm a test coverage of 100%.
+Use the `rspec` command to run tests.
+
+### Usage
+To use the application, start IRB from the command line with `irb`.
+
+Require the necessary file:
+```
+require './lib/bank_account.rb'
+```
+
+You can then perform transactions and print a statement, using the following example as a guide:
+```
+account = BankAccount.new
+account.deposit(1000, '10/01/2023')
+account.deposit(2000, '13/01/2023')
+account.withdraw(500, '14/01/2023')
+account.print_statement
+```
+
+The output for this particular example will be:
 ```
 date || credit || debit || balance
 14/01/2023 || || 500.00 || 2500.00
@@ -23,29 +42,21 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-### User Stories
-```
-As a user
-I would like to have a bank account
-So I can manage my money
-
-As a user
-I would like to deposit money into my account
-So I can store money in my bank account
-
-As a user
-I would like to withdraw money from my account
-So I can access my funds
-
-As a user
-I would like to print a statement
-So I can see a summary of my transactions and balances
-```
-
 ### Approach
+For my solution, I followed the principles of object-oriented programming and focused on
+creating clean, readable code. I used a TDD approach to develop the application, writing tests
+for each feature before implementing the code. I also made use of dependency injection to
+ensure that each class had minimal dependencies on other classes. Once all tests were passing
+and I was happy with the solution, I did some additional refactoring for code quality.
 
-I will use three classes to manage the functionality of this application:
+### Code Structure
+The code is organised into three classes to manage the functionality of this application:
 
-• BankAccount - to handle the balance, withdrawals and deposits
-• Transaction - to manage the individual elements of each transaction instance
-• Statement - to print the statement and format the relevant time and monetary elements
+• BankAccount - represents a bank account and allows for deposits, withdrawals and printing of statements.
+• Transaction - represents a single transaction and stores information such as the date, amount, type of transaction
+  and updated balance.
+• Statement - represents a statement of transactions and is responsible for formatting and printing the statement.
+
+### Screenshot
+
+
