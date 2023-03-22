@@ -2,7 +2,7 @@
 
 This is a command-line application that allows a user to utilise a bank account and make deposits, 
 withdrawals and print a statement of their transactions.
-## #Specification
+### Specification
 
 Please click [here](https://github.com/makersacademy/course/blob/main/individual_challenges/bank_tech_test.md) to view
 the original specification for this project, provided by @makersacademy.
@@ -59,4 +59,5 @@ The code is organised into three classes to manage the functionality of this app
 
 ### Screenshot
 
+![Screenshot 2023-03-22 at 11 59 21](https://user-images.githubusercontent.com/117667775/226899398-44565352-821e-4a56-ba35-77e6f6a3916d.png)
 
