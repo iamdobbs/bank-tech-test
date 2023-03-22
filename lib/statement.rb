@@ -9,12 +9,15 @@ class Statement
   end
 
   def print_statement
-    puts HEADER
-    @transactions.reverse_each do |t|
+    puts HEADER, transaction_list.join("\n")
+  end
+
+  def transaction_list
+    @transactions.reverse.map do |t|
       if t.transaction_type == :credit
-        puts "#{t.date} || #{format_output(t.amount)} || || #{format_output(t.balance)}"
+        "#{t.date} || #{format_output(t.amount)} || || #{format_output(t.balance)}"
       else
-        puts "#{t.date} || || #{format_output(t.amount)} || #{format_output(t.balance)}"
+        "#{t.date} || || #{format_output(t.amount)} || #{format_output(t.balance)}"
       end
     end
   end
